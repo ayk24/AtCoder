@@ -17,10 +17,11 @@ typedef vector<pll> vll;
 #define MFIN(m, s) m.find(s) != m.end()
 #define mp make_pair
 #define pb push_back
+#define INF (1 << 29)
 
 int main() {
-    ll N, hp;
-    ll ans = 100000000000LL;
+    ll N, hp, ans;
+    ans = INF;
     cin >> N;
     int X[101];
     for(ll i = 0; i < N; i++) {
