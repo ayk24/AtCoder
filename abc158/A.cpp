@@ -21,18 +21,12 @@ typedef vector<pll> vll;
 const int mod = 1000000007;
 
 int main() {
-    int flag;
     string S;
     cin >> S;
-    if(S[0] == S[1]){
-        if(S[1] == S[2]){
-        cout << "No" <<  endl;
-        }else{
-            cout << "Yes" << endl;
-        }
-    }else{
+    if(S == "AAA" || S == "BBB") {
+        cout << "No" << endl;
+    } else {
         cout << "Yes" << endl;
     }
-
-    return 0; 
+    return 0;
 }
