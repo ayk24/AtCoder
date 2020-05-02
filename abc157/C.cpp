@@ -21,16 +21,48 @@ typedef pair<char, ll> pcl;
 const int mod = 1000000007;
 
 int main() {
-    int N, M;
-    int s[100], c[100];
-    bool flag = false;
+    int N, M, s, c, cnt, num;
+    cnt = num = 0;
+    int check[3][10];
+    m0(check);
+
+    cin >> N >> M;
     for(int i = 0; i < M; i++) {
-        cin >> s[i] >> c[i];
-        s[i]--;
+        cin >> s >> c;
+        if(N > 1 && s == 1 && c == 0) {
+            cout << "-1" << endl;
+            exit(0);
+        } else {
+            if(s == 1) {
+                check[0][c] = 1;
+            } else if(s == 2) {
+                check[1][c] = 1;
+            } else {
+                check[2][c] = 1;
+            }
+        }
     }
 
-    for(int i = 0; i <= 999; i++) {
-        
+    for(int i = 0; i < N; i++) {
+        cnt = 0;
+        for(int j = 0; j <= 9; j++) {
+            if(cnt > 1) {
+                cout << "-1" << endl;
+                exit(0);
+            } else if(check[i][j] == 1) {
+                cnt++;
+                num += j * pow(10, N - i - 1);
+            }
+        }
     }
+
+    if(N == 3 && num < 100) {
+        num += 100;
+    } else if(N == 2 && num < 10) {
+        num += 10;
+    }
+
+    cout << num << endl;
+
     return 0;
 }
