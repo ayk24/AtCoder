@@ -11,12 +11,23 @@ typedef vector<pll> vll;
 
 #define mem0(x) memset(x, 0, sizeof(x))
 #define asort(x) sort(x.begin(), x.end());
-#define dsort(x, t) sort(x.begin(), a.end(), greater<t>());
+#define dsort(x, t) sort(x.begin(), x.end(), greater<t>());
 #define UNIQUE(v) v.erase(unique(v.begin(), v.end()), v.end());
 #define MINS(m, s) m.insert(mp(s, 1));
 #define MFIN(m, s) m.find(s) != m.end()
 #define mp make_pair
 #define pb push_back
+
+int main() {
+    // mapのソートとバリューの一致
+    map<string, ll> m;
+    ll maxv = 1;
+    for(auto it = m.begin(); it != m.end(); it++) {
+        if(it->second == maxv) {
+            cout << it->first << endl;
+        }
+    }
+}
 
 // vector
 template <typename T> istream &operator>>(istream &is, vector<T> &v) {
