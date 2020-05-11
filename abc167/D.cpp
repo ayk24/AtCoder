@@ -21,12 +21,32 @@ typedef pair<char, ll> pcl;
 const int mod = 1000000007;
 
 int main() {
-    string S;
-    cin >> S;
-    if(S == "ABC") {
-        cout << "ARC" << endl;
-    } else {
-        cout << "ABC" << endl;
+    int n;
+    ll k;
+    cin >> n >> k;
+    vector<int> a(n);
+    for(ll i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    vector<int> s;
+    vector<int> ord(n + 1, -1);
+    
+    int c = 1, l = 0, v = 1;
+    while(ord[v] == -1) {
+        ord[v] = s.size();
+        s.push_back(v);
+        v = a[v - 1];
+    }
+    c = s.size() - ord[v];
+    l = ord[v];
+
+    if(k < l)
+        cout << s[k] << endl;
+    else {
+        k -= l;
+        k %= c;
+        cout << s[l + k] << endl;
     }
     return 0;
 }

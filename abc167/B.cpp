@@ -21,12 +21,41 @@ typedef pair<char, ll> pcl;
 const int mod = 1000000007;
 
 int main() {
-    string S;
-    cin >> S;
-    if(S == "ABC") {
-        cout << "ARC" << endl;
-    } else {
-        cout << "ABC" << endl;
+    ll A, B, C, K;
+    ll max = 0;
+    cin >> A >> B >> C >> K;
+
+    if(A != 0) {
+        if(K > A) {
+            max += A;
+            K = K - A;
+        } else {
+            max += K;
+            cout << max << endl;
+            exit(0);
+        }
     }
+
+    if(B != 0) {
+        if(K > B) {
+            K = K - B;
+        } else {
+            cout << max << endl;
+            exit(0);
+        }
+    }
+
+    if(C != 0) {
+        if(K > C) {
+            max -= C;
+        } else {
+            max -= K;
+            cout << max << endl;
+            exit(0);
+        }
+    }
+
+    cout << max << endl;
+
     return 0;
 }

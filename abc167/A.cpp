@@ -21,12 +21,17 @@ typedef pair<char, ll> pcl;
 const int mod = 1000000007;
 
 int main() {
-    string S;
-    cin >> S;
-    if(S == "ABC") {
-        cout << "ARC" << endl;
-    } else {
-        cout << "ABC" << endl;
+    string s, t;
+    cin >> s;
+    cin >> t;
+    for(ll i = 0; i < s.length(); i++) {
+        if(s[i] != t[i]) {
+            cout << "No" << endl;
+            exit(0);
+        }
     }
+
+    cout << "Yes" << endl;
+
     return 0;
 }
