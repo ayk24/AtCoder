@@ -21,17 +21,31 @@ typedef pair<char, ll> pcl;
 const int mod = 1000000007;
 
 int main() {
-    string s, t;
-    cin >> s;
-    cin >> t;
-    for(ll i = 0; i < s.length(); i++) {
-        if(s[i] != t[i]) {
-            cout << "No" << endl;
-            exit(0);
-        }
+    int A, B, H, M;
+    double l, m, diff, c;
+
+    cin >> A >> B >> H >> M;
+
+    l = (double)M * 6;
+    double tmp = l / 12;
+    m = (double)H * 30 + tmp;
+
+    if(l == 0) {
+        l = 360;
+    }
+    if(m == 0) {
+        m = 360;
+    }
+    if(l > m) {
+        diff = l - m;
+    } else {
+        diff = m - l;
     }
 
-    cout << "Yes" << endl;
+    double a = cos(diff * M_PI / 180);
+    tmp = pow(A, 2) + pow(B, 2) - 2 * A * B * a;
+    c = sqrt(tmp);
+    printf("%.10f\n", c);
 
     return 0;
 }

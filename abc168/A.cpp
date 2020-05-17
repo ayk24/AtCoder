@@ -21,17 +21,20 @@ typedef pair<char, ll> pcl;
 const int mod = 1000000007;
 
 int main() {
-    string s, t;
-    cin >> s;
-    cin >> t;
-    for(ll i = 0; i < s.length(); i++) {
-        if(s[i] != t[i]) {
-            cout << "No" << endl;
-            exit(0);
-        }
-    }
+    string N;
+    cin >> N;
 
-    cout << "Yes" << endl;
+    if(N[N.size() - 1] == '3') {
+        cout << "bon" << endl;
+        exit(0);
+    } else if(N[N.size() - 1] == '0' || N[N.size() - 1] == '1' ||
+              N[N.size() - 1] == '6' || N[N.size() - 1] == '8') {
+        cout << "pon" << endl;
+        exit(0);
+    } else {
+        cout << "hon" << endl;
+        exit(0);
+    }
 
     return 0;
 }
