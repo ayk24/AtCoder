@@ -31,13 +31,13 @@ int main() {
 
     vector<int> s;
     vector<int> ord(n + 1, -1);
-    
     int c = 1, l = 0, v = 1;
     while(ord[v] == -1) {
         ord[v] = s.size();
         s.push_back(v);
         v = a[v - 1];
     }
+    // c = 周期, l = 周期に含まれない部分の長さ
     c = s.size() - ord[v];
     l = ord[v];
 

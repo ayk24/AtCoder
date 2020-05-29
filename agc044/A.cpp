@@ -20,7 +20,15 @@ typedef pair<char, ll> pcl;
 #define INF (1 << 29)
 const int mod = 1000000007;
 
-int main(){
-    
+ll T, N, sum;
+ll cost[4];
+
+int main() {
+    cin >> T;
+
+    for(ll i = 0; i < T; i++) {
+        cin >> N >> cost[0] >> cost[1] >> cost[2] >> cost[3];
+    }
+
     return 0;
 }
