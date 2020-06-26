@@ -16,8 +16,6 @@ typedef pair<char, ll> pcl;
 #define UNIQUE(v) v.erase(unique(v.begin(), v.end()), v.end());
 #define MINS(m, s) m.insert(mp(s, 1));
 #define MFIN(m, s) m.find(s) != m.end()
-#define mp make_pair
-#define pb push_back
 #define INF (1 << 29)
 const int mod = 1000000007;
 
