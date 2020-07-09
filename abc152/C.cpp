@@ -16,11 +16,20 @@ typedef pair<ll, ll> pll;
 const int mod = 1000000007;
 
 int main() {
-    int n;
+    ll n;
+    ll p[200005];
     cin >> n;
-    while(n > 1000) {
-        n -= 1000;
+
+    ll ans = 0;
+    ll min_ = INF;
+    for(ll i = 0; i < n; i++) {
+        cin >> p[i];
+        if(min_ > p[i]) {
+            min_ = p[i];
+            ans++;
+        }
     }
-    cout << 1000 - n << endl;
+
+    cout << ans << endl;
     return 0;
 }

@@ -10,7 +10,7 @@ typedef pair<ll, ll> pll;
 #define asort(x) sort(all(x));
 #define dsort(x, t) sort(x.begin(), x.end(), greater<t>());
 #define UNIQUE(v) v.erase(unique(v.begin(), v.end()), v.end());
-#define MINS(m, s) m.insert(mp(s, 1));
+#define MINS(m, s) m.insert(make_pair(s, 1));
 #define MFIN(m, s) m.find(s) != m.end()
 #define INF (1 << 29)
 const int mod = 1000000007;

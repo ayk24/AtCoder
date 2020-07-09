@@ -15,12 +15,26 @@ typedef pair<ll, ll> pll;
 #define INF (1 << 29)
 const int mod = 1000000007;
 
+ll modpow(ll x, ll n) {
+    if(n == 0)
+        return 1;
+    ll res = modpow(x * x, n / 2);
+    if(n & 1)
+        res = res * x;
+    return res;
+}
+
 int main() {
-    int n;
-    cin >> n;
-    while(n > 1000) {
-        n -= 1000;
+    ll h;
+    cin >> h;
+    ll cnt = 0;
+    while(true) {
+        if(h == 1) {
+            break;
+        }
+        h /= 2;
+        cnt++;
     }
-    cout << 1000 - n << endl;
+    cout << 2 * modpow(2, cnt) - 1 << endl;
     return 0;
 }

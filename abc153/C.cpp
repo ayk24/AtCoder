@@ -16,11 +16,19 @@ typedef pair<ll, ll> pll;
 const int mod = 1000000007;
 
 int main() {
-    int n;
-    cin >> n;
-    while(n > 1000) {
-        n -= 1000;
+    ll n, k;
+    cin >> n >> k;
+
+    vector<ll> h(n);
+    for(ll i = 0; i < n; i++) {
+        cin >> h[i];
     }
-    cout << 1000 - n << endl;
+    dsort(h, ll);
+
+    ll ans = 0;
+    for(ll i = k; i < n; i++) {
+        ans += h[i];
+    }
+    cout << ans << endl;
     return 0;
 }

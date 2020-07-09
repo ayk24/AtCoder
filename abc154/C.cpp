@@ -16,11 +16,23 @@ typedef pair<ll, ll> pll;
 const int mod = 1000000007;
 
 int main() {
-    int n;
+    ll n, tmp;
+    bool flag = true;
+    map<ll, ll> m;
+
     cin >> n;
-    while(n > 1000) {
-        n -= 1000;
+    for(ll i = 0; i < n; i++) {
+        cin >> tmp;
+        if(MFIN(m, tmp)) {
+            flag = false;
+        } else {
+            MINS(m, tmp);
+        }
     }
-    cout << 1000 - n << endl;
+    if(flag) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
     return 0;
 }
