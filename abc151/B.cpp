@@ -16,6 +16,24 @@ typedef pair<ll, ll> pll;
 const int mod = 1000000007;
 
 int main(){
-    
+    int n, k, m, ans, sum;
+    int a[105];
+    cin >> n >> k >> m;
+
+    sum = 0;
+    for (int i = 0; i < n-1; i++) {
+        cin >> a[i];
+        sum += a[i];
+    }
+
+    ans = n * m - sum;
+    if(ans > k){
+        cout << -1 << endl;
+    }else if(ans < 0){
+        cout << 0 << endl;
+    }else{
+        cout << ans << endl;
+    }
+
     return 0;
 }
