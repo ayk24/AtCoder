@@ -22,17 +22,23 @@ const ll LINF = 1e18;
 const int mod = 1e9 + 7;
 
 int main() {
-    int n, l, abs_min, ans;
-    cin >> n >> l;
-    abs_min = INF;
-    ans = 0;
-    for(int i = 0; i < n; i++) {
-        int now = i + l;
-        if(abs(now) < abs(abs_min)){
-            abs_min = now;
-        }
-        ans += now;
+    ll s;
+    cin >> s;
+
+    ll cnt[10005];
+    m0(cnt);
+    for(int i = 3; i < 10000; i++) {
+        cnt[i] = 1;
     }
-    cout << ans - abs_min << endl;
+
+    for(ll i = 3; i <= s; i++) {
+        for(ll j = 3; j <= s - 3; j++) {
+            cnt[i + j] += cnt[i];
+            cnt[i + j] = cnt[i + j] % mod;
+        }
+    }
+
+    cout << cnt[s] << endl;
+
     return 0;
 }

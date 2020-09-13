@@ -13,26 +13,15 @@ typedef pair<ll, ll> pll;
 #define mins(m, s) m.insert(make_pair(s, 1));
 #define mfin(m, s) m.find(s) != m.end()
 
-#define dump(x) cout << #x << " = " << (x) << endl
-#define YES(n) cout << ((n) ? "YES" : "NO") << endl
-#define Yes(n) cout << ((n) ? "Yes" : "No") << endl
+#define dump(x)  cout << #x << " = " << (x) << endl
+#define YES(n) cout << ((n) ? "YES" : "NO" ) << endl
+#define Yes(n) cout << ((n) ? "Yes" : "No" ) << endl
 
 const int INF = 1e9;
 const ll LINF = 1e18;
-const int mod = 1e9 + 7;
+const int mod = 1e9+7;
 
-int main() {
-    int n, l, abs_min, ans;
-    cin >> n >> l;
-    abs_min = INF;
-    ans = 0;
-    for(int i = 0; i < n; i++) {
-        int now = i + l;
-        if(abs(now) < abs(abs_min)){
-            abs_min = now;
-        }
-        ans += now;
-    }
-    cout << ans - abs_min << endl;
+int main(){
+    
     return 0;
 }

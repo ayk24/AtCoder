@@ -22,17 +22,16 @@ const ll LINF = 1e18;
 const int mod = 1e9 + 7;
 
 int main() {
-    int n, l, abs_min, ans;
-    cin >> n >> l;
-    abs_min = INF;
-    ans = 0;
-    for(int i = 0; i < n; i++) {
-        int now = i + l;
-        if(abs(now) < abs(abs_min)){
-            abs_min = now;
+    int n, x, l, sum, i;
+    cin >> n >> x;
+    sum = 0;
+    for(i = 0; i < n; i++) {
+        cin >> l;
+        sum += l;
+        if(sum > x) {
+            break;
         }
-        ans += now;
     }
-    cout << ans - abs_min << endl;
+    cout << i + 1 << endl;
     return 0;
 }

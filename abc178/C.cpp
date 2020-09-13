@@ -21,18 +21,23 @@ const int INF = 1e9;
 const ll LINF = 1e18;
 const int mod = 1e9 + 7;
 
-int main() {
-    int n, l, abs_min, ans;
-    cin >> n >> l;
-    abs_min = INF;
-    ans = 0;
-    for(int i = 0; i < n; i++) {
-        int now = i + l;
-        if(abs(now) < abs(abs_min)){
-            abs_min = now;
-        }
-        ans += now;
+ll mod_pow(ll x, ll y) {
+    ll res = 1;
+    for(ll i = 0; i < y; i++) {
+        res = res * x % mod;
     }
-    cout << ans - abs_min << endl;
+    return res;
+}
+
+int main() {
+    ll n;
+    cin >> n;
+
+    ll ans = mod_pow(10, n) - mod_pow(9, n) - mod_pow(9, n) + mod_pow(8, n);
+    ans %= mod;
+    ans = (ans + mod) % mod;
+
+    cout << ans << endl;
+
     return 0;
 }

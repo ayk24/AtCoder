@@ -22,17 +22,15 @@ const ll LINF = 1e18;
 const int mod = 1e9 + 7;
 
 int main() {
-    int n, l, abs_min, ans;
-    cin >> n >> l;
-    abs_min = INF;
-    ans = 0;
-    for(int i = 0; i < n; i++) {
-        int now = i + l;
-        if(abs(now) < abs(abs_min)){
-            abs_min = now;
-        }
-        ans += now;
-    }
-    cout << ans - abs_min << endl;
+    ll a, b, c, d;
+    ll ans = -LINF;
+    cin >> a >> b >> c >> d;
+
+    ans = max(a * c, ans);
+    ans = max(a * d, ans);
+    ans = max(b * c, ans);
+    ans = max(b * d, ans);
+
+    cout << ans << endl;
     return 0;
 }
