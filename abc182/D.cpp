@@ -22,22 +22,24 @@ const ll LINF = 1e18;
 const int mod = 1e9 + 7;
 
 int main() {
-    ll N, A[200001], sumx[200010], maxx[200010];
-    m0(sumx);
-    m0(maxx);
+    ll N, A[200005], p[200005], q[200005];
     cin >> N;
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < N; i++) {
         cin >> A[i];
-    for(int i = 0; i < N; i++) {
-        sumx[i + 1] = sumx[i] + A[i];
-        maxx[i + 1] = max(maxx[i], sumx[i + 1]);
     }
-    ll ans = 0, S = 0;
+    p[0] = A[0], q[0] = A[0];
+
     for(int i = 0; i < N; i++) {
-        S += sumx[i + 1];
-        ans = max(ans, S + maxx[i + 2]);
+        p[i + 1] = p[i] + A[i + 1];
+        q[i + 1] = max(q[i], p[i + 1]);
     }
 
+    ll ans = 0, x = 0;
+    for(int i = 0; i < N; i++) {
+        ans = max(ans, x + q[i]);
+        x += p[i];
+    }
     cout << ans << endl;
+
     return 0;
 }
